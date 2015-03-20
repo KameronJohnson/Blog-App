@@ -5,7 +5,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new(params[:post])
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -26,7 +30,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:notice] = "Post Successfully Updated"
-      redirect_to posts_path
+      redirect_to posts_path(@post.id)
     else
       render :edit
     end

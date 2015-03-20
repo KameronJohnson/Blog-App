@@ -1,17 +1,19 @@
+<div class="container">
 <h1> Blog App </h1>
+  <p><%= flash[:notice] %></p>
+
+  <% if @posts.any? %>
+    <h3>Posts:</h3>
 
 <ul class="hidden-ul">
   <% @posts.each do |post| %>
-    <h4><li><%= post.title %> </li></h4>
-    <li><%= post.content %> </li>
-    <li><%= post.title %> </li>
-    <% post.comments.each do |comment| %>
-      <ul>
-        <h5><li><%= link_to comment.comment_text, post_comment_path(post, comment) %>
-      </ul>
+    <h4><li> <%= link_to post.title, post_path(post.id) %> </li></h4>
     <% end %>
-  <%= link_to "Add a Comment", new_post_comment_path(post), class: "btn btn-sm btn-info" %>
+  </ul>
+
+  <% else %>
+  <h4> No posts to display </h4>
   <% end %>
-</ul>
 
 <%= link_to "Add a Post", new_post_path, class: "btn btn-med btn-warning" %>
+</div>

@@ -1,5 +1,37 @@
-<!-- <% content_for(:title, "Blog Post") %>
+<div class="container">
+  <%= flash[:notice] %>
 
-  <h2><%= @post.title %></h2>
+  <div class="col-md-12">
+  <h4><%= @post.title %></h4>
   <p><%= @post.content %></p>
-  <p><%= @post.date %></p> -->
+  <div class="col-md-12">
+
+  <div class="col-md-12">
+    <% if @post.comments.any? %>
+      <h4>Comments:</h4>
+        <% @post.comments.each do |comment| %>
+          <div class="col-md-12">
+            <%= comment.comment_text %>
+            <%= link_to "Edit", edit_post_comment_path(comment.post_id, comment.id) %> |
+            <%= link_to "Delete", post_comment_path(comment.post_id, comment.id),
+                                  :data => {:confirm => "Sure you wanna?",
+                                            :method => "delete"} %>
+          </div>
+        <% end %>
+    <% end %>
+    <hr>
+
+
+
+  <%= link_to "Add a Comment", new_post_comment_path(@post), class: "btn btn-sm btn-info" %>
+  </div>
+  <hr>
+  <div class="col-md-12">
+
+  | <%= link_to "Edit", edit_post_path,
+                              :class => "btn btn-sm btn-danger" %> |
+           <%= link_to "Delete", post_path(@post), class: "btn btn-sm btn-danger",
+                           :data => { :confirm => "You sure?",
+                                      :method => "delete"} %> |
+  </div>
+</div>
