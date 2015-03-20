@@ -22,14 +22,15 @@
     </ul>
     <hr>
 
-  <%= link_to "Add a Comment", new_post_comment_path(@post), class: "btn btn-sm btn-info" %>
+  <%= link_to "Add a Comment", new_post_comment_path(@post), class: "btn btn-sm btn-warning" %>
 
   <hr>
 
+  | <%= link_to "Home", posts_path, :class => "btn btn-sm btn-primary" %>
   | <%= link_to "Edit", edit_post_path,
-                              :class => "btn btn-sm btn-danger" %> |
-    <%= link_to "Delete", post_path(@post), class: "btn btn-sm btn-danger",
+                              :class => "btn btn-sm btn-primary" %>
+  | <%= link_to "Delete", post_path(@post), class: "btn btn-sm btn-primary",
                               :data => { :confirm => "Delete this blog post?",
-                                      :method => "delete"} %> |
-
+                                      :method => "delete"} %>
+  |
 </div>
