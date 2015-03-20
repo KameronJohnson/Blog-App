@@ -5,7 +5,13 @@
     <h4><li><%= post.title %> </li></h4>
     <li><%= post.content %> </li>
     <li><%= post.title %> </li>
+    <% post.comments.each do |comment| %>
+      <ul>
+        <h5><li><%= link_to comment.comment_text, post_comment_path(post, comment) %>
+      </ul>
+    <% end %>
+  <%= link_to "Add a Comment", new_post_comment_path(post), class: "btn btn-sm btn-info" %>
   <% end %>
 </ul>
 
-<%= link_to "Add a Post", new_post_path, class: "btn btn-sm btn-warning" %>
+<%= link_to "Add a Post", new_post_path, class: "btn btn-med btn-warning" %>
