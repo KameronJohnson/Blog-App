@@ -1,1 +1,9 @@
 <h1> Blog App </h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <h4><li><%= post.title %> </li></h4>
+  <% end %>
+</ul>
+
+<%= link_to "Add a Post", new_post_path, class: "btn btn-sm btn-warning" %>
