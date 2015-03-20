@@ -1,3 +1,15 @@
 <div class="container">
-<%= render 'form' %>
+  <div class="col-md-12">
+    <h4>Enter Blog Post</h4>
+
+    <% if @post.errors.any? %>
+      <h4>There was an error creating your blog post, try again.</h4>
+      <ul class="hidden-ul">
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+      </ul>
+      <% end %>
+    <%= render 'form' %>
+  </div>
 </div>
