@@ -1,8 +1,10 @@
 <h1> Blog App </h1>
 
-<ul>
+<ul class="hidden-ul">
   <% @posts.each do |post| %>
     <h4><li><%= post.title %> </li></h4>
+    <li><%= post.content %> </li>
+    <li><%= post.title %> </li>
   <% end %>
 </ul>
 
