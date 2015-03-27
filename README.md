@@ -1,11 +1,19 @@
 Kam's Blog App
 ======
 
-A simple blogging app where you can create, edit and delete blog posts and their associated comments.
+A simple blogging app where you can create, edit and delete blog posts and their associated comments. Optional user sign up / log in available courtesy of Devise.
 
 Built with Rails / Postgres using Rspec and Capybara for specs.
 
-Directions
+Directions with Heroku
+---------
+
+1.) Visit kams-blog-app.herokuapp.com in your browser.
+
+2.) Have fun!
+
+
+Directions without Heroku
 ---------
 
 1.) Clone the repository:
@@ -20,7 +28,7 @@ Directions
 4.) In terminal, create the migrations:
 `$ rake db:migrate`
 
-5.) Start the rails server in console:
+5.) Start the rails server:
 `$ rails s`
 
 6.) Type in localhost:3000 in your browser.
@@ -30,7 +38,7 @@ Directions
 About
 -----
 
-Intro to Ruby on Rails assessment at Epicodus Winter 2015.
+Ruby on Rails assessment at Epicodus Winter 2015.
 
 By Kameron Johnson
 
